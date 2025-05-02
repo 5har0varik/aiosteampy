@@ -479,6 +479,7 @@ class TradeOffer(BaseTradeOffer):
     items_to_give: list[TradeOfferItem]
     items_to_receive: list[TradeOfferItem]
 
+    tradeid: int
     message: str = ""
 
     def __post_init__(self):

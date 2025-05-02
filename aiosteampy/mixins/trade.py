@@ -89,6 +89,7 @@ class TradeMixin(SteamWebApiMixin, SteamCommunityPublicMixin):
             items_to_receive=self._parse_items_for_trade(data.get("items_to_receive", ()), item_descrs_map),
             message=data["message"],
             status=TradeOfferStatus(data["trade_offer_state"]),
+            tradeid=int(data["tradeid"]) if "tradeid" in data else 0,
         )
 
     @classmethod
